@@ -1,0 +1,21 @@
+{
+  "name": "study-help",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered student preparation and career tracking platform.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "npm --workspace client run dev",
+    "dev:server": "npm --workspace server run dev",
+    "build": "npm --workspace server run build && npm --workspace client run build",
+    "typecheck": "npm --workspace server run typecheck && npm --workspace client run typecheck",
+    "start": "npm --workspace server run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
